@@ -6,13 +6,13 @@ Application Maintenance: Stacie Koslovsky <br>
 
 The code and files within this repository are detailed as follows:
 * **app folder** -  contains data and code for AS-MAP
-  -data folder - species distribution/abundance data
-  -documentation folder - further documentation files
-  -renv folder - includes settings relevant to the particular R environment and package versioning [for back compatibility]
-  -shapefiles folder - folder to house any automatic shapefiles
-  -www folder - includes images used in app
-  -global.R - sets global options, also holds information text
-  -server.R - handles user interactions
+  - data folder - species distribution/abundance data
+  - documentation folder - further documentation files
+  - renv folder - includes settings relevant to the particular R environment and package versioning [for back compatibility]
+  - shapefiles folder - folder to house any automatic shapefiles
+  - www folder - includes images used in app
+  - global.R - sets global options, also holds information text
+  - server.R - handles user interactions
   -ui.R - determines general structure of app interface
 * **inst folder** - contains code from Paul Conn to help understand and interpret the data used in the app
 * **ckwon_log.md** - documentation and information from Christine Kwon's internship
