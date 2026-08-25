@@ -622,13 +622,13 @@ server <- function(input, output, session) {
       
       centroids_inside <- centroids[inside, ]
       dist_matrix <- units::drop_units(sf::st_distance(centroids_inside))
-      
+
       cor_matrix <- exp(-dist_matrix / spatial_range)
       diag(cor_matrix) <- 1
-      
+
       se_subset  <- df_no_geom$row_variances
       cov_matrix <- outer(se_subset, se_subset, FUN = "*") * cor_matrix
-      
+ 
       absolute_variance <- sum(cov_matrix, na.rm = TRUE)
       absolute_se       <- sqrt(absolute_variance)
       absolute_cv       <- absolute_se / absolute_estimate
@@ -684,21 +684,21 @@ server <- function(input, output, session) {
         paste0("Absolute Abundance Sum for Selected Area: ", format(round(absolute_estimate, 2), big.mark = ","))
       })
       output$overall_variance_sum <- shiny::renderText({
-        paste0("Spatially Corrected Variance: ", format(round(absolute_variance, 2), big.mark = ","))
+        paste0("Standard Error: ", format(round(sqrt(absolute_variance), 2), big.mark = ","))
       })
       output$overall_cv <- shiny::renderText({
-        paste0("Spatial Coefficient of Variation (CV): ", round(absolute_cv, 3))
+        paste0("Coefficient of Variation (CV): ", round(absolute_cv, 3))
       })
       output$medmode <- shiny::renderText({
         paste0("95% Log-Normal CI: [", format(round(ci_lower, 2), big.mark = ","), " , ", format(round(ci_upper, 2), big.mark = ","), "]")
       })
 
       summary_data <- data.frame(
-        "Metric" = c("Species", "Total Abundance (Sum)", "Spatial Variance", "Coefficient of Variation", "95% CI Lower Bound", "95% CI Upper Bound"),
+        "Metric" = c("Species", "Total Abundance (Sum)", "Standard Error", "Coefficient of Variation", "95% CI Lower Bound", "95% CI Upper Bound"),
         "Value" = c(
           selected_species(),
           format(round(absolute_estimate, 2), big.mark = ","),
-          format(round(absolute_variance, 2), big.mark = ","),
+          format(round(sqrt(absolute_variance), 2), big.mark = ","),
           as.character(round(absolute_cv, 3)),
           format(round(ci_lower, 2), big.mark = ","),
           format(round(ci_upper, 2), big.mark = ",")

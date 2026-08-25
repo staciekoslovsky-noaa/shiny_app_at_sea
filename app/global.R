@@ -253,6 +253,17 @@ methods_info4 <- div(
                           where", em("m"), "indexes model and \\(\\hat{N}_{es}\\) is the model-averaged (i.e. ensemble) estimate.")),
                        style = "color: #005b96")
 
+methods_info_iceseals <- div(
+  withMathJax(
+    p("The estimates are generated using spatially-explicit spatio-temporal models applied
+      to aerial survey data,
+          as described in Boveng et al. (2025), Boveng et al. (in prep), Conn et al. (in prep), 
+          and Moreland et al. (in prep).  These citations cover aerial surveys in the Chukchi
+          Sea in 2016; the eastern Bering Sea (U.S.) in 2012 and 2013; the western Bering Sea
+          in 2012 and 2013; and the Beaufort Sea in 2021, respectively.  In each case, we averaged
+          abundance over each day of the survey to come up with a single map for spring of each year.")),
+    style = "color: #005b96")
+
 methods_info5 <- div(h3("Custom-area calculations"),
                      withMathJax(
                        p("We use different methods for custom-area calculations depending on 
