@@ -14,4 +14,7 @@ PM,Sperm whale,Physeter macrocephalus,POPhexagons_sf.rda,relative,FALSE,Platform
 PP,Harbor porpoise,Phocoena phocoena,POPhexagons_sf.rda,relative,FALSE,Platform of Opportunity (POP)
 PV,Harbor seal,Phoca vitulina,POPhexagons_sf.rda,relative,FALSE,Platform of Opportunity (POP)
 EB,Bearded seal,Erignathus barbatus,grid_sf.RData,absolute,TRUE,Integrated
-DL,Eastern Bering Sea beluga whale,Delphinapterus leucas,dl_grid_sf.RData,absolute,TRUE,Aerial Survey
+DL,Eastern Bering Sea beluga whale,Delphinapterus leucas,dl_grid_sf.RData,absolute,TRUE,EBS Aerial Survey
+PH,Ringed seal,Pusa hispida,grid_sf.RData,absolute,TRUE,Ice Seal Aerial Survey
+PL,Spotted seal,Phoca largha,grid_sf.RData,absolute,TRUE,Ice Seal Aerial Survey
+HF,Ribbon seal,Histriophoca fasciata,grid_sf.RData,absolute,TRUE,Ice Seal Aerial Survey

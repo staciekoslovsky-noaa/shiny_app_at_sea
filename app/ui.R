@@ -257,8 +257,11 @@ ui <- shinydashboard::dashboardPage(
             bsCollapsePanel("How Bearded Seal Estimates are Generated", style = "primary", value = "Integrated",
               p(methods_info3)
             ),
-            bsCollapsePanel("How EBS Beluga Estimates are Generated", style = "primary", value = "Aerial Survey",
+            bsCollapsePanel("How EBS Beluga Estimates are Generated", style = "primary", value = "EBS Aerial Survey",
               p(methods_info4)
+            ),
+            bsCollapsePanel("How Aerial Survey Estimates for Ice-associated Seals are Generated", style = "primary", value = "Ice Seal Aerial Survey",
+                            p(methods_info_iceseals)
             )
           ),
           br(),
