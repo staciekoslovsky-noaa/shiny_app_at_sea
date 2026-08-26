@@ -76,7 +76,7 @@ server <- function(input, output, session) {
     
     code <- selected_species_code()
 
-    filename <- paste0("data/", code, "_MCMC.RData")
+    filename <- paste0("data/", code, "_data.RData")
     
     if (!file.exists(filename)) {
       shiny::showNotification(paste("File not found:", filename), type = "error")
@@ -628,7 +628,6 @@ server <- function(input, output, session) {
 
       se_subset  <- df_no_geom$row_variances
       cov_matrix <- outer(se_subset, se_subset, FUN = "*") * cor_matrix
- 
       absolute_variance <- sum(cov_matrix, na.rm = TRUE)
       absolute_se       <- sqrt(absolute_variance)
       absolute_cv       <- absolute_se / absolute_estimate
